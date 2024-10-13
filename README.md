@@ -33,7 +33,12 @@ Puedes añadir **ColorToneSaturate** a tu proyecto utilizando [Swift Package Man
  ```html
 https://github.com/tu-usuario/ColorToneSaturate.git
 ```
+<<<<<<< Updated upstream
 4. Selecciona la versión y agrega el paquete a tu proyecto.
+=======
+
+3. Selecciona la versión y agrega el paquete a tu proyecto.
+>>>>>>> Stashed changes
 
 ## Uso
 
@@ -100,6 +105,10 @@ struct TestImageView: View {
         Text("Color 5 detectado")
             .foregroundStyle(colorToneSaturate.colors[4])
 ```
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 ###  Obtener el color más vibrante
 
 Puedes acceder al color más vibrante detectado utilizando la propiedad mostVibrantColor:
