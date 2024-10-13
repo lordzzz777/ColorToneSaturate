@@ -65,9 +65,7 @@ struct TestImageView: View {
                 .scaledToFit()
                 .frame(width: 300, height: 300)
                 .onAppear {
-                    if let uiImage = UIImage(named: "exampleImage") {
-                        colorToneSaturate.detectColors(in: uiImage)
-                    }
+                   colorToneSaturate.getColorUIImage("exampleImage")
                 }
 
             HStack {
