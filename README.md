@@ -82,6 +82,26 @@ struct TestImageView: View {
     }
 }
 ```
+##  Ejeplo de uso de color obtenido en Texto
+
+```swift
+
+        // Mostrar los colores detectados de manera más simplificada
+        Text("Color 1 detectado")
+            .foregroundStyle(colorToneSaturate.colors[0])
+        
+        Text("Color 2 detectado")
+            .foregroundStyle(colorToneSaturate.colors[1])
+        
+        Text("Color 3 detectado")
+            .foregroundStyle(colorToneSaturate.colors[2])
+        
+        Text("Color 4 detectado")
+            .foregroundStyle(colorToneSaturate.colors[3])
+        
+        Text("Color 5 detectado")
+            .foregroundStyle(colorToneSaturate.colors[4])
+```
 ###  Obtener el color más vibrante
 
 Puedes acceder al color más vibrante detectado utilizando la propiedad mostVibrantColor:
