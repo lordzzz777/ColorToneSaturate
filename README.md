@@ -141,7 +141,7 @@ Los mensajes de error se imprimen en la consola para fines de depuración.
 
 ## Licencia
 
-Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE]([LICENSE](https://github.com/lordzzz777/ColorToneSaturate?tab=License-1-ov-file#)) para más detalles.
+Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE]([(https://github.com/lordzzz777/ColorToneSaturate?tab=License-1-ov-file#)]) para más detalles.
 
 ## Autores
 
