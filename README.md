@@ -29,10 +29,12 @@ Puedes añadir **ColorToneSaturate** a tu proyecto utilizando [Swift Package Man
 
 1. En Xcode, ve a tu proyecto y selecciona `Swift Packages`.
 2. Haz clic en el botón `+` y pega el siguiente URL:
-
+´´´html
+https://github.com/tu-usuario/ColorToneSaturate.git
+´´´
       <input type="text" value="https://github.com/tu-usuario/ColorToneSaturate.git" readonly>
 
-3. Selecciona la versión y agrega el paquete a tu proyecto.
+4. Selecciona la versión y agrega el paquete a tu proyecto.
 
 ## Uso
 
