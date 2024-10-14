@@ -78,7 +78,8 @@ struct TestImageView: View {
                 }
             }
         }
-        .background(colorToneSaturate.mostVibrantColor)
+        .background(Color(colorToneSaturate.mostVibrantColor), in: RoundedRectangle(cornerRadius: 10))
+        .padding()
     }
 }
 ```
