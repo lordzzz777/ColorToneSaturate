@@ -1,3 +1,4 @@
+
 # ColorToneSaturate
 
 ![Swift](https://img.shields.io/badge/swift-5.9-orange)
@@ -5,55 +6,54 @@
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## Descripción
+## Description
 
-**ColorToneSaturate** es una biblioteca en Swift diseñada para detectar colores dominantes y vibrantes en imágenes. A través de una serie de funciones de procesamiento de imágenes, puedes identificar los colores más prominentes y sus niveles de saturación. Es ideal para aplicaciones que necesitan análisis de color, creación de paletas, o ajuste de interfaz según el tono de la imagen.
+**ColorToneSaturate** is a Swift library designed to detect dominant and vibrant colors in images. Through a set of image processing functions, you can identify the most prominent colors and their saturation levels. It’s perfect for applications requiring color analysis, palette creation, or interface adjustments based on image tones.
 
-## Características
+## Features
 
-- Detecta hasta 5 colores dominantes en una imagen.
-- Identifica el color más vibrante.
-- Funciones auxiliares para calcular distancias y mezclar colores.
-- Fácil integración con SwiftUI.
-  
-## Requisitos
+- Detects up to 5 dominant colors in an image.
+- Identifies the most vibrant color.
+- Auxiliary functions for color blending and distance calculations.
+- Easy integration with SwiftUI.
+
+## Requirements
 
 - iOS 17.0+ / macOS 14.0+
 - Swift 5.9+
 
-## Instalación
+## Installation
 
 ### Swift Package Manager
 
-Puedes añadir **ColorToneSaturate** a tu proyecto utilizando [Swift Package Manager](https://swift.org/package-manager/).
+You can add **ColorToneSaturate** to your project using [Swift Package Manager](https://swift.org/package-manager/).
 
-1. En Xcode, ve a tu proyecto y selecciona `Swift Packages`.
-2. Haz clic en el botón `+` y pega el siguiente URL:
+1. In Xcode, go to your project and select `Swift Packages`.
+2. Click the `+` button and paste the following URL:
 
  ```html
-https://github.com/tu-usuario/ColorToneSaturate.git
+https://github.com/your-username/ColorToneSaturate.git
 ```
 
-3. Selecciona la versión y agrega el paquete a tu proyecto.
+3. Select the desired version and add the package to your project.
 
+## Usage
 
-## Uso
+### Initialization
 
-### Inicialización
-
-Crea una instancia de **`ColorToneSaturateCore`** para manejar la detección de colores en tu aplicación:
+Create an instance of **`ColorToneSaturateCore2`** to manage color detection in your app:
 
 ```swift
 import ColorToneSaturate
 
 let colorToneSaturate = ColorToneSaturateCore2()
 ```
-## Ejemplo básico
 
-Para detectar colores en una imagen y obtener los colores dominantes, sigue este ejemplo de uso en SwiftUI:
+## Basic Example
+
+To detect colors in an image and retrieve the dominant ones, follow this example in SwiftUI:
 
 ```swift
-
 import SwiftUI
 import ColorToneSaturate
 
@@ -83,90 +83,90 @@ struct TestImageView: View {
     }
 }
 ```
-##  Ejeplo de uso de color obtenido en Texto
+
+## Example: Using Detected Colors in Text
 
 ```swift
+// Display the detected colors in a simplified way
+Text("Detected Color 1")
+    .foregroundStyle(colorToneSaturate.colors[0])
 
-        // Mostrar los colores detectados de manera más simplificada
-        Text("Color 1 detectado")
-            .foregroundStyle(colorToneSaturate.colors[0])
-        
-        Text("Color 2 detectado")
-            .foregroundStyle(colorToneSaturate.colors[1])
-        
-        Text("Color 3 detectado")
-            .foregroundStyle(colorToneSaturate.colors[2])
-        
-        Text("Color 4 detectado")
-            .foregroundStyle(colorToneSaturate.colors[3])
-        
-        Text("Color 5 detectado")
-            .foregroundStyle(colorToneSaturate.colors[4])
+Text("Detected Color 2")
+    .foregroundStyle(colorToneSaturate.colors[1])
+
+Text("Detected Color 3")
+    .foregroundStyle(colorToneSaturate.colors[2])
+
+Text("Detected Color 4")
+    .foregroundStyle(colorToneSaturate.colors[3])
+
+Text("Detected Color 5")
+    .foregroundStyle(colorToneSaturate.colors[4])
 ```
 
-###  Obtener el color más vibrante
+### Access the Most Vibrant Color
 
-Puedes acceder al color más vibrante detectado utilizando la propiedad mostVibrantColor:
+You can access the most vibrant color detected using the `mostVibrantColor` property:
 
 ```swift
 let vibrantColor = colorToneSaturate.mostVibrantColor
 ```
 
-###  Mezclar colores
+### Mix Colors
 
-La biblioteca incluye funciones auxiliares para mezclar colores y calcular distancias entre ellos:
+The library includes helper functions to mix colors and calculate distances between them:
 
 ```swift
 let mixedColor = colorToneSaturate.mixColors(color1: .red, color2: .blue)
 ```
 
-## API Detallada
+## Detailed API
 
-### Clase principal
+### Main Class
 `ColorToneSaturateCore2`
 
-#### Propiedades
+#### Properties
 
 - **`colors: [Color]`**  
-  Lista de colores dominantes detectados en la imagen.
+  List of dominant colors detected in the image.
 
 - **`mostVibrantColor: Color`**  
-  El color más vibrante detectado.
+  The most vibrant color detected.
 
-#### Métodos
+#### Methods
 
 - **`getColorUIImage(_ name: String)`**  
-  Carga y procesa una imagen desde los assets del proyecto.  
-  - **Parámetros**:
-    - `name`: El nombre de la imagen en los assets.
+  Loads and processes an image from the project assets.  
+  - **Parameters**:
+    - `name`: The name of the image in the assets.
 
 - **`detectColors(in image: UIImage)`**  
-  Procesa una imagen y detecta los colores dominantes.
+  Processes an image and detects the dominant colors.
 
-## Personalización
+## Customization
 
-Puedes ajustar el número máximo de colores a detectar modificando el parámetro `maxColors` en el método `detectColors`.  
-Por defecto, se detectan hasta 5 colores dominantes.
+You can adjust the maximum number of colors to detect by modifying the `maxColors` parameter in the `detectColors` method.  
+By default, up to 5 dominant colors are detected.
 
-## Manejo de errores
+## Error Handling
 
-La clase maneja internamente los errores relacionados con el procesamiento de imágenes y la detección de colores.  
-Los mensajes de error se imprimen en la consola para fines de depuración.
+The class internally handles errors related to image processing and color detection.  
+Error messages are printed to the console for debugging purposes.
 
-## Contribución
+## Contribution
 
-**¡Las contribuciones son bienvenidas!** Si deseas mejorar esta librería:
+**Contributions are welcome!** If you want to improve this library:
 
-1. Haz un fork del proyecto.
-2. Crea una rama para tu funcionalidad (`git checkout -b nueva-funcionalidad`).
-3. Realiza tus cambios y haz commits descriptivos.
-4. Envía una pull request explicando los cambios realizados.
+1. Fork the project.
+2. Create a branch for your feature (`git checkout -b new-feature`).
+3. Make your changes and commit them with descriptive messages.
+4. Submit a pull request explaining the changes made.
 
-## Licencia
+## License
 
-Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE](https://github.com/lordzzz777/ColorToneSaturate?tab=License-1-ov-file#) para más detalles.
+This project is licensed under the MIT license. See the [LICENSE](https://github.com/lordzzz777/ColorToneSaturate?tab=License-1-ov-file#) file for details.
 
-## Autores
+## Authors
 
 - Lordzzz: [https://github.com/lordzzz777](url)
 
